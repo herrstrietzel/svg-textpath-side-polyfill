@@ -4,13 +4,15 @@
 ## The problem text-on-path alignment
 Graphic applications support to move text on paths to the inside or outside for decades.  
 
-![text on path](demo/text-on-path.png) 
+![text on path](demo/text-on-path.png)   
+
+*Left: default alignment; Right: side="right"*
 
 Replicating this functionality in SVG is unfortunately cumbersome.  
-Mozilla Firefox is to this date the only browser which support the [`side`](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/side) attribute
+Mozilla Firefox is to this date the only browser which support the [`side`](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/side) attribute.
 
 ## How it works
-The polyfill checks, whether `side` is supported natively – if not it clones `textPath` definitions and reverses the drawing directions. 
+The polyfill checks, whether `side` is supported natively – if not it clones `textPath` definitions with `side="right"` and reverses the drawing directions. 
 
 Basically, we're simply reversing the path.
 
